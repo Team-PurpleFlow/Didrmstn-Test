@@ -135,7 +135,7 @@ void AYangGeunsoo_TestCharacter::Zoom(const FInputActionValue& Value)
 {
 	float ZoomValue = Value.Get<float>();
 	
-	if (ZoomValue != 0 || Controller != nullptr)
+	if (ZoomValue != 0 && Controller != nullptr)
 	{
 		const float NewTargetArmLength = CameraBoom->TargetArmLength + (ZoomValue * ZoomStep);
 		CameraBoom->TargetArmLength = FMath::Clamp(NewTargetArmLength, MinZoomLength, MaxZoomLength);
