@@ -14,4 +14,5 @@
 - Zoom & Aim 기능 테스트
   - EnhancedInput을 사용하여 Zoom과 Aim 기능을 구현하기 위한 테스트 
   - 먼저 Zoom과 Aim 용 Input Action을 세팅한다.
-  - ![ZoomInputSetting](https://github.com/Team-PurpleFlow/YangGeunsoo_Test/assets/142881397/28d7e77a-4c6b-4728-a014-607123b38098)
+  - <img src = "https://github.com/Team-PurpleFlow/YangGeunsoo_Test/assets/142881397/28d7e77a-4c6b-4728-a014-607123b38098"  width="405" height="460">
+    <img src = "https://github.com/Team-PurpleFlow/YangGeunsoo_Test/assets/142881397/104d87f6-27fd-4f06-9c9d-893d1cd5c5be"  width="375" height="460">
