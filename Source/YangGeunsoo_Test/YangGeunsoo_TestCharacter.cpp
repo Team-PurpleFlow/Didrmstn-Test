@@ -91,6 +91,9 @@ void AYangGeunsoo_TestCharacter::SetupPlayerInputComponent(class UInputComponent
 		EnhancedInputComponent->BindAction(AimAction, ETriggerEvent::Triggered, this, &AYangGeunsoo_TestCharacter::StartAiming);
 		EnhancedInputComponent->BindAction(AimAction, ETriggerEvent::Completed, this, &AYangGeunsoo_TestCharacter::StopAiming);
 
+		//Perspective Change
+		EnhancedInputComponent->BindAction(PerspectiveChangeAction, ETriggerEvent::Completed, this, &AYangGeunsoo_TestCharacter::PerspectiveChange);
+
 	}
 
 }
@@ -157,5 +160,22 @@ void AYangGeunsoo_TestCharacter::StopAiming(const FInputActionValue& Value)
 	{
 		GetFollowCamera()->SetFieldOfView(90.0f);
 		IsAiming = false;
+	}
+}
+
+void AYangGeunsoo_TestCharacter::PerspectiveChange(const FInputActionValue& Value)
+{
+	if (Controller != nullptr)
+	{
+		if (IsFirstPerson == false)
+		{
+			CameraBoom->TargetArmLength = 0.0f;
+			IsFirstPerson = true;
+		}
+		else
+		{
+			CameraBoom->TargetArmLength = 400.0f;
+			IsFirstPerson = false;
+		}
 	}
 }

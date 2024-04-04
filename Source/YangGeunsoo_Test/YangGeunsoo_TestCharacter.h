@@ -45,6 +45,10 @@ class AYangGeunsoo_TestCharacter : public ACharacter
 	UPROPERTY(EditAnywhere, BlueprintReadOnly, Category = Input, meta = (AllowPrivateAccess = "true"))
 	class UInputAction* AimAction;
 
+	/** Perspective Change Input Action */
+	UPROPERTY(EditAnywhere, BlueprintReadOnly, Category = Input, meta = (AllowPrivateAccess = "true"))
+	class UInputAction* PerspectiveChangeAction;
+
 	/** Variables */
 	UPROPERTY(EditAnywhere, BlueprintReadWrite, Category = Variables, meta = (AllowPrivateAccess = "true"))
 	float MinZoomLength = 0.0f;
@@ -57,6 +61,9 @@ class AYangGeunsoo_TestCharacter : public ACharacter
 
 	UPROPERTY(EditAnywhere, BlueprintReadOnly, Category = Variables, meta = (AllowPrivateAccess = "true"))
 	bool IsAiming;
+
+	UPROPERTY(EditAnywhere, BlueprintReadOnly, Category = Variables, meta = (AllowPrivateAccess = "true"))
+	bool IsFirstPerson;
 
 public:
 	AYangGeunsoo_TestCharacter();
@@ -76,7 +83,10 @@ protected:
 	/** Called for Aim input */
 	void StartAiming(const FInputActionValue& Value);
 
-	void StopAiming(const FInputActionValue& Value);		
+	void StopAiming(const FInputActionValue& Value);
+
+	/** Called for Perspective Change input */
+	void PerspectiveChange(const FInputActionValue& Value);
 
 protected:
 	// APawn interface
